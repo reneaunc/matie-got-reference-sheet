@@ -16,7 +16,7 @@ Put your own character images in:
 
 `images/characters/`
 
-Use the filenames already referenced in `data.js`, for example:
+Use the filenames already referenced in `data.js`, for example :
 
 - `arya-stark.jpg`
 - `tyrion-lannister.jpg`

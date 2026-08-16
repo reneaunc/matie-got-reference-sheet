@@ -127,3 +127,104 @@ dialog.addEventListener('click', e => {
 renderFilters();
 renderDirectory();
 if (location.hash) openFromHash();
+
+
+// Main navigation tabs
+const topTabs = [...document.querySelectorAll('.top-tab')];
+const siteViews = [...document.querySelectorAll('.site-view')];
+
+topTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    topTabs.forEach(t => t.classList.remove('active'));
+    siteViews.forEach(v => v.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.view).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+});
+
+// Houses and family trees
+const houses = window.HOUSES || {};
+const houseSelector = document.getElementById('houseSelector');
+const houseTree = document.getElementById('houseTree');
+let activeHouse = Object.keys(houses)[0];
+
+function getCharacter(id){
+  return id ? characters.find(c => c.id === id) : null;
+}
+
+function treePortrait(person){
+  const c = getCharacter(person.characterId);
+  if (!c) return '<div class="tree-photo-fallback">Family</div>';
+  return `<img class="tree-portrait" src="${c.image}" alt="${c.name}" data-tree-image>`;
+}
+
+function personNode(person){
+  const c = getCharacter(person.characterId);
+  const tag = c ? 'button' : 'div';
+  return `
+    <${tag} class="person-node ${c ? 'show-character' : ''}"
+      ${c ? `type="button" data-character-id="${c.id}"` : ''}>
+      ${treePortrait(person)}
+      <strong>${person.name}</strong>
+      <small>${person.relation}</small>
+    </${tag}>`;
+}
+
+function renderHouseButtons(){
+  houseSelector.innerHTML = '';
+  Object.entries(houses).forEach(([name, house]) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'house-btn' + (name === activeHouse ? ' active' : '');
+    button.innerHTML = `<strong>House ${name}</strong><span>${house.seat}</span>`;
+    button.addEventListener('click', () => {
+      activeHouse = name;
+      renderHouseButtons();
+      renderHouseTree();
+    });
+    houseSelector.appendChild(button);
+  });
+}
+
+function renderHouseTree(){
+  const house = houses[activeHouse];
+  const generations = house.generations.map((generation, index) => {
+    const nodes = generation.map(personNode).join('');
+    const connector = index ? '<div class="tree-connector">↓ family / relationship connection ↓</div>' : '';
+    return `${connector}<div class="tree-generation">${nodes}</div>`;
+  }).join('');
+
+  houseTree.innerHTML = `
+    <div class="house-title-row">
+      <h3>House ${activeHouse}</h3>
+      <p>${house.seat}</p>
+    </div>
+    <p class="house-description">${house.description}</p>
+    <div class="legend-row">
+      <span><span class="legend-swatch linked"></span>Tap to open character profile</span>
+      <span><span class="legend-swatch"></span>Family/context only</span>
+    </div>
+    <div class="tree-scroll">
+      <div class="full-tree">${generations}</div>
+    </div>
+    <div class="relationship-note">
+      Trees are intentionally spoiler-limited to information revealed by the end of Season 2.
+    </div>`;
+
+  houseTree.querySelectorAll('[data-character-id]').forEach(node => {
+    node.addEventListener('click', () => openProfile(node.dataset.characterId));
+  });
+
+  houseTree.querySelectorAll('[data-tree-image]').forEach(img => {
+    img.addEventListener('error', () => {
+      const replacement = document.createElement('div');
+      replacement.className = 'tree-photo-fallback';
+      replacement.textContent = 'Add photo';
+      img.replaceWith(replacement);
+    }, {once:true});
+  });
+}
+
+renderHouseButtons();
+renderHouseTree();

@@ -16,7 +16,7 @@ Put your own character images in:
 
 `images/characters/`
 
-Use the filenames already referenced in `data.js`, for example :
+Use the filenames already referenced in `data.js`, for example:
 
 - `arya-stark.jpg`
 - `tyrion-lannister.jpg`
@@ -50,3 +50,13 @@ Recommended approach:
 
 ## Notes
 This starter intentionally does not include copyrighted HBO portrait files. Add images you are comfortable using in your own private/personal project.
+
+
+## Houses tab
+
+The site now includes a **Houses** tab with interactive family trees for Stark, Lannister, Baratheon, Tyrell, Greyjoy, Targaryen, Tully, and Arryn.
+
+- Gold-bordered nodes are characters with full guide profiles.
+- Tapping a character opens the same profile used in the main Characters tab.
+- House/tree data is stored separately in `houses.js`.
+- Trees are intentionally spoiler-limited to information revealed through Season 2.

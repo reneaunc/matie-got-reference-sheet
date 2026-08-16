@@ -17,6 +17,13 @@
   </header>
 
   <main>
+    <nav class="top-tabs" aria-label="Guide sections">
+      <button class="top-tab active" type="button" data-view="charactersView">Characters</button>
+      <button class="top-tab" type="button" data-view="housesView">Houses</button>
+      <button class="top-tab" type="button" data-view="mapsView">Maps</button>
+    </nav>
+
+    <div id="charactersView" class="site-view active">
     <section class="controls">
       <label class="search-wrap">
         <span>Search characters</span>
@@ -33,6 +40,20 @@
       <div id="directory" class="directory-grid"></div>
     </section>
 
+    </div>
+
+    <div id="housesView" class="site-view">
+      <section>
+        <div class="section-heading">
+          <h2>Houses & Family Trees</h2>
+          <p>Select a house to explore its family tree. Tap any highlighted character to open their full profile.</p>
+        </div>
+        <div id="houseSelector" class="house-selector"></div>
+        <div id="houseTree" class="house-tree-wrap" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <div id="mapsView" class="site-view">
     <section class="map-section">
       <div class="section-heading">
         <h2>Maps</h2>
@@ -49,6 +70,7 @@
         </a>
       </div>
     </section>
+    </div>
   </main>
 
   <dialog id="profileDialog">
@@ -57,6 +79,7 @@
   </dialog>
 
   <script src="data.js"></script>
+  <script src="houses.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

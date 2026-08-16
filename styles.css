@@ -56,3 +56,82 @@ dialog::backdrop{background:rgba(0,0,0,.78)}
   .profile-hero img,.profile-placeholder{width:96px;height:96px}
   .profile h3{font-size:1.45rem}
 }
+
+
+/* Main tabs */
+.top-tabs{
+  display:flex;gap:8px;position:sticky;top:0;z-index:30;
+  background:rgba(17,19,24,.97);backdrop-filter:blur(10px);
+  padding:10px 0;border-bottom:1px solid var(--border)
+}
+.top-tab{
+  flex:1;border:1px solid var(--border);background:var(--panel);
+  color:var(--text);border-radius:12px;padding:10px 12px;font-size:.95rem
+}
+.top-tab.active{background:var(--gold);border-color:var(--gold);color:#15120c;font-weight:800}
+.site-view{display:none}
+.site-view.active{display:block}
+
+/* House directory */
+.house-selector{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;margin:14px 0 18px
+}
+@media(min-width:700px){
+  .house-selector{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+.house-btn{
+  border:1px solid var(--border);background:var(--panel);color:var(--text);
+  border-radius:14px;padding:12px;text-align:left
+}
+.house-btn strong{display:block}
+.house-btn span{display:block;color:var(--muted);font-size:.8rem;margin-top:3px}
+.house-btn.active{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+
+/* Interactive family tree */
+.house-title-row{margin-bottom:8px}
+.house-title-row h3{font-family:Georgia,serif;font-size:1.65rem;margin:0}
+.house-title-row p{color:var(--muted);margin:.2rem 0 0}
+.house-description{color:var(--muted)}
+.legend-row{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.8rem;margin:10px 0}
+.legend-swatch{
+  display:inline-block;width:11px;height:11px;border-radius:50%;
+  border:1px solid var(--border);margin-right:5px
+}
+.legend-swatch.linked{border-color:var(--gold);background:rgba(208,168,92,.15)}
+
+.tree-scroll{
+  overflow-x:auto;-webkit-overflow-scrolling:touch;padding:4px 0 18px
+}
+.full-tree{
+  min-width:720px;padding:18px 14px;background:var(--panel);
+  border:1px solid var(--border);border-radius:16px
+}
+.tree-generation{
+  display:flex;justify-content:center;align-items:flex-start;gap:12px;flex-wrap:wrap
+}
+.tree-connector{
+  text-align:center;color:var(--muted);font-size:.82rem;padding:7px 0
+}
+.person-node{
+  min-width:130px;max-width:165px;border:1px solid var(--border);
+  background:var(--panel2);border-radius:12px;padding:9px;color:var(--text);
+  text-align:center
+}
+button.person-node{cursor:pointer}
+.person-node.show-character{border-color:var(--gold)}
+.person-node.show-character:hover{background:#2b3039}
+.person-node strong{display:block;font-size:.9rem}
+.person-node small{display:block;color:var(--muted);font-size:.7rem;margin-top:3px}
+.tree-portrait,.tree-photo-fallback{
+  width:62px;height:62px;border-radius:50%;margin:0 auto 7px;display:block;
+  background:#303641
+}
+.tree-portrait{object-fit:cover}
+.tree-photo-fallback{
+  display:grid;place-items:center;color:var(--muted);font-size:.65rem;padding:5px
+}
+.relationship-note{
+  margin-top:12px;padding:11px;border:1px solid var(--border);
+  border-radius:12px;color:var(--muted);font-size:.84rem
+}

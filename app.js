@@ -129,21 +129,7 @@ renderDirectory();
 if (location.hash) openFromHash();
 
 
-// Main navigation tabs
-const topTabs = [...document.querySelectorAll('.top-tab')];
-const siteViews = [...document.querySelectorAll('.site-view')];
 
-topTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    topTabs.forEach(t => t.classList.remove('active'));
-    siteViews.forEach(v => v.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById(tab.dataset.view).classList.add('active');
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
-});
-
-// Houses and family trees
 const houses = window.HOUSES || {};
 const houseSelector = document.getElementById('houseSelector');
 const houseTree = document.getElementById('houseTree');
@@ -228,3 +214,37 @@ function renderHouseTree(){
 
 renderHouseButtons();
 renderHouseTree();
+
+// =====================================
+// MAIN GUIDE TAB NAVIGATION
+// =====================================
+
+function initGuideTabs() {
+  const tabs = document.querySelectorAll(".top-tab");
+  const views = document.querySelectorAll(".site-view");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const targetId = tab.dataset.view;
+      const targetView = document.getElementById(targetId);
+
+      if (!targetView) {
+        console.error(`No guide view found for "${targetId}"`);
+        return;
+      }
+
+      tabs.forEach((button) => button.classList.remove("active"));
+      views.forEach((view) => view.classList.remove("active"));
+
+      tab.classList.add("active");
+      targetView.classList.add("active");
+    });
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initGuideTabs);
+} else {
+  initGuideTabs();
+}
+

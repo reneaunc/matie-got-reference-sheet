@@ -169,22 +169,13 @@ button.person-node{cursor:pointer}
 .site-view.active { display: block; }
 
 .world-map-tools{display:flex;align-items:center;gap:8px;margin:12px 0}
-.world-map-tools button,.map-location-buttons button{min-width:44px;min-height:44px;border:1px solid var(--border);border-radius:10px;background:var(--panel);color:var(--text);padding:8px 12px}
+.world-map-tools button{min-width:44px;min-height:44px;border:1px solid var(--border);border-radius:10px;background:var(--panel);color:var(--text);padding:8px 12px}
 .world-map-tools button:disabled{opacity:.4;cursor:default}
 .world-map-viewport{width:100%;max-height:65vh;overflow:auto;border:1px solid var(--border);border-radius:16px;background:#192f3b;overscroll-behavior:contain}
 #worldMapCanvas{width:100%}
 #worldMap{display:block;width:100%;height:auto}
-.map-region-labels{font-size:12px;fill:#393f34;text-anchor:middle;font-weight:700;letter-spacing:1px}
-.map-continent-labels{font-size:30px;fill:#e1cc96;text-anchor:middle;letter-spacing:9px}
-.map-sea-labels{font-size:15px;fill:#89a9b6;font-style:italic;text-anchor:middle;letter-spacing:2px}
-.world-map-marker{cursor:pointer;outline:none}
-.world-map-marker circle{fill:#e8bf70;stroke:#26332d;stroke-width:2}
-.world-map-marker .marker-hit{fill:transparent;stroke:none}
-.world-map-marker text{fill:#fff3d8;font-size:15px;font-weight:700;paint-order:stroke;stroke:#192f3b;stroke-width:4px;stroke-linejoin:round}
-.world-map-marker:focus circle,.world-map-marker[aria-pressed="true"] circle:not(.marker-hit){stroke:#fff;stroke-width:4px;fill:#fff}
-.map-location-note{margin:12px 0;min-height:90px}
-.map-location-buttons{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 22px}
-.map-location-buttons button[aria-pressed="true"]{background:var(--gold);color:var(--bg)}
+.map-credit{color:var(--muted);font-size:.8rem;line-height:1.6}
+.world-map-viewport:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
 /* S3E3 house branches and phone navigation */
 [hidden]{display:none!important}

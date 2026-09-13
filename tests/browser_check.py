@@ -78,7 +78,12 @@ with sync_playwright() as p:
                 page.screenshot(path=str(ROOT.parent / "tully-mobile.png"), full_page=True)
             page.get_by_role("button", name="All Houses", exact=False).click()
         page.get_by_role("button", name="Maps", exact=True).click()
-        assert "Season 3, Episode 3" in page.locator("#mapsView").inner_text()
+        assert "World_Of_Ice_And_Fire.jpg" in page.locator("#worldMap").get_attribute("src")
+        assert page.locator("#mapsView svg").count() == 0
+        page.get_by_role("button", name="Zoom in", exact=True).click()
+        assert page.locator("#mapZoomLabel").inner_text() == "150%"
+        page.get_by_role("button", name="Fit map", exact=True).click()
+        assert page.locator("#mapZoomLabel").inner_text() == "100%"
         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
         page.get_by_role("button", name="Characters", exact=True).click()
         page.locator("#search").fill("Ramsay")

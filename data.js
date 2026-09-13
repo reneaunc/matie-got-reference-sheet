@@ -483,7 +483,7 @@ window.CHARACTERS = [
       "The Imp",
       "Halfman"
     ],
-    "portraitApproved": false
+    "portraitApproved": true
   },
   {
     "id": "cersei-lannister",
@@ -701,7 +701,7 @@ window.CHARACTERS = [
     ],
     "currentStatus": "Still king and betrothed to Margaery, who cultivates his attention and takes an interest in his crossbow.",
     "aliases": [],
-    "portraitApproved": false
+    "portraitApproved": true
   },
   {
     "id": "margaery-tyrell",
@@ -761,7 +761,7 @@ window.CHARACTERS = [
     ],
     "currentStatus": "Visits an orphanage, wins public goodwill, and draws closer to Joffrey. With Olenna, questions Sansa about his character.",
     "aliases": [],
-    "portraitApproved": false
+    "portraitApproved": true
   },
   {
     "id": "loras-tyrell",
@@ -818,7 +818,7 @@ window.CHARACTERS = [
     "aliases": [
       "Knight of Flowers"
     ],
-    "portraitApproved": false
+    "portraitApproved": true
   },
   {
     "id": "stannis-baratheon",
@@ -861,7 +861,7 @@ window.CHARACTERS = [
     ],
     "currentStatus": "Has Davos imprisoned after he attacks Melisandre. Wants Melisandre to stay, but she departs by sea.",
     "aliases": [],
-    "portraitApproved": false
+    "portraitApproved": true
   },
   {
     "id": "melisandre",
@@ -929,7 +929,7 @@ window.CHARACTERS = [
     "aliases": [
       "Onion Knight"
     ],
-    "portraitApproved": false
+    "portraitApproved": true
   },
   {
     "id": "daenerys-targaryen",
@@ -1114,7 +1114,7 @@ window.CHARACTERS = [
       "Petyr Baelish",
       "Littlefinger"
     ],
-    "portraitApproved": false
+    "portraitApproved": true
   },
   {
     "id": "varys",
@@ -1148,7 +1148,7 @@ window.CHARACTERS = [
     "aliases": [
       "The Spider"
     ],
-    "portraitApproved": false
+    "portraitApproved": true
   },
   {
     "id": "brienne-of-tarth",
@@ -1222,7 +1222,7 @@ window.CHARACTERS = [
       "The Hound",
       "Hound"
     ],
-    "portraitApproved": false
+    "portraitApproved": true
   },
   {
     "id": "bronn",
@@ -1254,7 +1254,7 @@ window.CHARACTERS = [
     ],
     "currentStatus": "Now a knight after Blackwater, he asks Tyrion for higher pay and continues working for him.",
     "aliases": [],
-    "portraitApproved": false
+    "portraitApproved": true
   },
   {
     "id": "shae",
@@ -1392,7 +1392,7 @@ window.CHARACTERS = [
     ],
     "currentStatus": "Remains an Ironborn commander. Her last meeting with Theon was her attempt to persuade him to abandon Winterfell.",
     "aliases": [],
-    "portraitApproved": false
+    "portraitApproved": true
   },
   {
     "id": "balon-greyjoy",
@@ -1496,7 +1496,7 @@ window.CHARACTERS = [
     ],
     "currentStatus": "Leaves the inn with Arya and the Brotherhood. Hot Pie stays behind to bake.",
     "aliases": [],
-    "portraitApproved": false
+    "portraitApproved": true
   },
   {
     "id": "edmure-tully",

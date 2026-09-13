@@ -41,7 +41,7 @@ Missing images fall back to a readable character name or portrait placeholder. C
 
 Every displayed fact must be established by the end of S3E3. Unknown motives and locations remain unknown. Ramsay's name is included at the owner's explicit request; his profile describes only helping and rescuing Theon, without house membership or additional background. He is excluded from house trees.
 
-Astapor's negotiated exchange remains pending. The map page includes only current locations and instructs viewers to set Quartermaester's spoiler slider to Season 3, Episode 3. External map content is controlled by that site.
+Astapor's negotiated exchange remains pending. The Maps tab contains a local, embedded SVG world map with simplified geography, zoom controls and selectable locations. Its notes stop at Season 3, Episode 3. It has no external map dependencies, links or future character routes. Distances and coastlines are schematic rather than a canonical atlas.
 
 The editorial review checked the episode plot summaries for [S3E1](https://en.wikipedia.org/wiki/Valar_Dohaeris), [S3E2](https://en.wikipedia.org/wiki/Dark_Wings,_Dark_Words) and [S3E3](https://en.wikipedia.org/wiki/Walk_of_Punishment). These are maintainer references; external pages may contain material beyond their plot summaries.
 
@@ -52,6 +52,7 @@ All displayed story information has been audited against a Season 3, Episode 3 c
 - `data.js`: character content, aliases, portrait paths and `currentStatus`.
 - `houses.js`: house metadata and typed family connections.
 - `app.js`: search, filters, house navigation and shared profile dialog.
+- `maps.js`: interactive world-map markers, safe location notes and zoom.
 - `index.html` / `styles.css`: page structure and responsive presentation.
 
 With Python, Playwright and Microsoft Edge installed, run `python tests/browser_check.py`. The checks cover data references, 390×844 and 320×740 phone viewports plus 1280×900 desktop, every house page and linked key member, search, filters, empty results, portrait fallbacks, dialog closing, deep links and page overflow.

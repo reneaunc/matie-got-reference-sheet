@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#111318">
-  <title>Game of Thrones — Season 2 Guide</title>
+  <title>Game of Thrones — S3E3 Guide</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <div>
-      <div class="eyebrow">SPOILER-SAFE THROUGH S2E10</div>
+      <div class="eyebrow">Spoiler-safe through Season 3, Episode 3</div>
       <h1>Game of Thrones Guide</h1>
-      <p>Faces, family trees, locations, motives, allies, enemies, and end-of-Season-2 status.</p>
+      <p>Faces, families, locations and motivations through “Walk of Punishment.”</p>
     </div>
   </header>
 
@@ -27,7 +27,7 @@
     <section class="controls">
       <label class="search-wrap">
         <span>Search characters</span>
-        <input id="search" type="search" placeholder="Try “Tyrion”, “King's Landing”, “Greyjoy”…">
+        <input id="search" type="search" placeholder="Try Blackfish, Riverrun, Tully…">
       </label>
       <div id="filters" class="filters" aria-label="Storyline filters"></div>
     </section>
@@ -38,6 +38,7 @@
         <p>Tap a face or name to open the full profile.</p>
       </div>
       <div id="directory" class="directory-grid"></div>
+      <p id="searchResults" role="status"></p>
     </section>
 
     </div>
@@ -62,18 +63,18 @@
       <div class="map-links">
         <a class="map-card" href="https://quartermaester.info/" target="_blank" rel="noopener">
           <strong>Quartermaester Interactive Map</strong>
-          <span>Set the spoiler slider to Season 2, Episode 10.</span>
+          <span>Set the spoiler slider to Season 3, Episode 3 before exploring. This external site has its own spoiler controls.</span>
         </a>
-        <a class="map-card" href="https://awoiaf.westeros.org/index.php/World_Map_(HBO_Game_Of_Thrones)" target="_blank" rel="noopener">
-          <strong>HBO Season 2 World Map Archive</strong>
-          <span>Good for broad regions and major locations.</span>
-        </a>
+        <div class="map-card"><strong>Riverrun · Riverlands</strong><span>Robb and Catelyn are with the Tully family. Arya's group and Jaime's captors are elsewhere in the Riverlands.</span></div>
+        <div class="map-card"><strong>The North &amp; beyond the Wall</strong><span>Bran's group travels through the North. Theon's exact position is unknown. Jon is among the Free Folk; the Watch survivors shelter at Craster's Keep.</span></div>
+        <div class="map-card"><strong>King's Landing &amp; Dragonstone</strong><span>Tywin directs the royal court in the capital. Stannis remains on Dragonstone; Melisandre has departed by sea.</span></div>
+        <div class="map-card"><strong>Astapor · Slaver's Bay</strong><span>Daenerys is negotiating for the Unsullied in this coastal city of Essos.</span></div>
       </div>
     </section>
     </div>
   </main>
 
-  <dialog id="profileDialog">
+  <dialog id="profileDialog" aria-labelledby="profileName">
     <button id="closeDialog" class="close-btn" aria-label="Close profile">×</button>
     <div id="profileContent"></div>
   </dialog>

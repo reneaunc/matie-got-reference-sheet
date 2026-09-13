@@ -167,3 +167,56 @@ button.person-node{cursor:pointer}
 }
 .site-view { display: none; }
 .site-view.active { display: block; }
+
+/* S3E3 house branches and phone navigation */
+[hidden]{display:none!important}
+button{font:inherit;cursor:pointer;touch-action:manipulation}
+button,input,a{ -webkit-tap-highlight-color:transparent }
+button:focus-visible,a:focus-visible,input:focus-visible,.tree-scroll:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.controls{top:65px}
+.filter-btn,.back-btn,.top-tab{min-height:44px}
+.close-btn{width:44px;height:44px}
+.house-btn{padding:16px;overflow-wrap:anywhere}
+.house-btn span{margin-top:8px}
+.house-btn .house-cta{color:var(--gold);font-weight:700}
+.house-sigil{width:48px;height:48px;object-fit:contain}
+.back-btn{border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--text);padding:10px 14px;margin:12px 0}
+.house-tree-wrap,.site-view,.profile-hero>div{min-width:0}
+.house-tree-wrap>.fact{margin:8px 0}
+.tree-scroll{max-width:100%;overscroll-behavior-x:contain}
+.full-tree{width:max-content;min-width:100%;padding:20px}
+.family-branch{padding:16px 0 24px;border-bottom:1px solid var(--border)}
+.family-branch:last-child{border-bottom:0}
+.branch-from,.branch-to{display:flex;justify-content:center;gap:14px}
+.branch-from .person-node,.branch-to .person-node{width:140px;max-width:140px;flex:0 0 140px}
+.branch-link{display:flex;justify-content:center;align-items:center;position:relative;min-height:62px}
+.branch-link:before{content:"";position:absolute;top:0;bottom:0;left:50%;border-left:2px solid var(--accent)}
+.branch-link span{position:relative;background:var(--panel);color:var(--gold);padding:4px 12px;font-size:.82rem;max-width:480px;text-align:center}
+.branch-to{border-top:2px solid var(--accent);padding-top:18px}
+.branch-to .person-node{position:relative}
+.branch-to .person-node:before{content:"";position:absolute;height:18px;top:-20px;left:50%;border-left:2px solid var(--accent)}
+.marriage .branch-link:before,.partnership .branch-link:before{border-left:4px double var(--gold)}
+.marriage .branch-to,.partnership .branch-to{border-top:4px double var(--gold)}
+.public .branch-link:before,.public .branch-to .person-node:before{border-left-style:dotted}
+.public .branch-to{border-top-style:dotted}
+.context .branch-link:before,.context .branch-to .person-node:before{border-left-style:dashed}
+.context .branch-to{border-top-style:dashed}
+.tree-hint,#searchResults{color:var(--muted);font-size:.85rem}
+.key-members{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.key-members .person-node{max-width:none;width:100%;min-height:60px}
+.profile-relations{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.profile-relations li{border-bottom:1px solid var(--border);padding-bottom:8px}
+.profile-relations span{display:block;color:var(--muted);font-size:.85rem}
+.profile-placeholder,.placeholder{overflow-wrap:anywhere}
+.character-card img,.profile-hero img,.tree-portrait{object-position:center top}
+dialog{overscroll-behavior:contain}
+body:has(dialog[open]){overflow:hidden}
+@media(max-width:480px){
+  main{padding:12px}
+  .house-selector{grid-template-columns:1fr}
+  .site-header{padding:26px 16px 16px}
+  .controls{position:static}
+  .profile-hero{gap:12px}
+  .profile{padding-left:12px;padding-right:12px}
+  .profile h3{overflow-wrap:anywhere}
+}
